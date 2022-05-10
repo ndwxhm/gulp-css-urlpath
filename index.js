@@ -3,7 +3,7 @@
  * @Date: 2022-05-07 12:12:59
  * @Description: 处理css中url
  * @LastEditors: 刘原
- * @LastEditTime: 2022-05-10 17:11:02
+ * @LastEditTime: 2022-05-10 17:20:41
  * @FilePath: /gulp-css-urlpath/index.js
  */
 const rework = require("rework");
@@ -31,7 +31,7 @@ module.exports = function (options) {
                 if (/\.\//.test(url) || /\.\.\//.test(url) || !/^\//.test(url)) { // 相对路径, ./images, ../images;非绝对路径，eg: 'images/xxx'
                     newUrl = path.join(fileDir, url);
                 }
-                if (rootPath) {
+                if (rootPath && !/^\//.test(url)) {
                     newUrl = rootPath + newUrl;
                 }
                 newUrl = cdnPath + newUrl;
