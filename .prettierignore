@@ -1,0 +1,8 @@
+# Ignore artifacts:
+.husky
+.vscode
+package-lock.json
+dist
+build
+
+node_modules

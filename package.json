@@ -1,0 +1,43 @@
+{
+    "name": "gulp-css-urlpath",
+    "description": "## 运行环境 node 12.16.1",
+    "version": "0.0.1",
+    "main": "index.js",
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "minimist": "^1.2.6",
+        "path": "^0.12.7",
+        "rework": "^1.0.1",
+        "rework-plugin-url": "^1.1.0",
+        "through2": "^4.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ndwxhm/gulp-css-urlpath.git"
+    },
+    "keywords": [
+        "gulp-hash"
+    ],
+    "author": "liuyuan",
+    "license": "ISC",
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.3",
+        "@commitlint/config-conventional": "^16.2.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.2.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^11.2.6",
+        "prettier": "^2.6.2"
+    },
+    "lint-staged": {
+        "*.js": "eslint"
+    }
+}
