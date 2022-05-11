@@ -3,7 +3,7 @@
  * @Date: 2022-05-07 12:12:59
  * @Description: 处理css中url
  * @LastEditors: 刘原
- * @LastEditTime: 2022-05-10 17:20:41
+ * @LastEditTime: 2022-05-11 22:02:51
  * @FilePath: /gulp-css-urlpath/index.js
  */
 const rework = require("rework");
@@ -45,14 +45,18 @@ module.exports = function (options) {
 
     return through.obj(function (file, enc, cb) {
         if (file.contents) {
-            let css = file.contents.toString();
-            const filePath = file.path;
-            if (/\.css$/.test(filePath)) {
-                css = convertUrls(css, path.dirname(filePath).replace(root.replace(/(\/|\\)$/, ""), "").replace(/\\/gim, "/"));
-
+            try {
+                let css = file.contents.toString();
+                const filePath = file.path;
+                if (/\.css$/.test(filePath)) {
+                    css = convertUrls(css, path.dirname(filePath).replace(root.replace(/(\/|\\)$/, ""), "").replace(/\\/gim, "/"));
+                }
+                file.contents = new Buffer(css);
+                this.push(file);
+            } catch (error) {
+                console.log("error-file-path:" + file.path);
+                throw error;
             }
-            file.contents = new Buffer(css);
-            this.push(file);
         }
         cb();
     });

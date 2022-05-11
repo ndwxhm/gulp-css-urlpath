@@ -1,7 +1,7 @@
 {
     "name": "gulp-css-urlpath",
     "description": "## 运行环境 node 12.16.1",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "index.js",
     "dependencies": {
         "gulp": "^4.0.2",
